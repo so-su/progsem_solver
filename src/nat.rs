@@ -116,7 +116,7 @@ pub enum NatDerivTimes {
         n2: Nat,
         n4: Nat,
         deriv1: Box<NatDerivTimes>,
-        deriv2: Box<NatDerivPlus>,
+        deriv2: NatDerivPlus,
     },
 }
 
@@ -133,7 +133,7 @@ impl NatDerivTimes {
                     n2: n2.clone(),
                     n4: n4.clone(),
                     deriv1: Box::new(NatDerivTimes::derive(*n1, n2.clone(), n3.clone())),
-                    deriv2: Box::new(NatDerivPlus::derive(n2, n3, n4)),
+                    deriv2: NatDerivPlus::derive(n2, n3, n4),
                 }
             }
             _ => panic!(),
