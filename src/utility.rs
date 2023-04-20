@@ -1,3 +1,4 @@
+// 括弧をインデントして見やすくする
 pub fn indent(s: String) -> String {
     let indent = "    ";
     s.replace("{}", "@")

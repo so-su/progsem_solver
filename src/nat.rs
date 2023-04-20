@@ -19,6 +19,7 @@ impl Nat {
     }
 }
 
+// Natのたし算
 impl Add for Nat {
     type Output = Self;
     fn add(self, rhs: Self) -> Self {
@@ -30,6 +31,7 @@ impl Add for Nat {
     }
 }
 
+// Natのかけ算
 impl Mul for Nat {
     type Output = Self;
     fn mul(self, rhs: Self) -> Self {
@@ -62,6 +64,7 @@ pub enum NatDerivPlus {
 }
 
 impl NatDerivPlus {
+    // 導出を構成する
     pub fn derive(n1: Nat, n2: Nat, n3: Nat) -> NatDerivPlus {
         use Nat::*;
         match (n1, n2, n3) {
@@ -76,6 +79,7 @@ impl NatDerivPlus {
         }
     }
 
+    // u8から導出を構成する
     pub fn derive_u8(n1: u8, n2: u8, n3: u8) -> NatDerivPlus {
         Self::derive(Nat::new(n1), Nat::new(n2), Nat::new(n3))
     }
@@ -117,6 +121,7 @@ pub enum NatDerivTimes {
 }
 
 impl NatDerivTimes {
+    // 導出を構成する
     pub fn derive(n1: Nat, n2: Nat, n3: Nat) -> NatDerivTimes {
         use Nat::*;
         match (n1, n2, n3) {
@@ -135,6 +140,7 @@ impl NatDerivTimes {
         }
     }
 
+    // u8から導出を構成する
     pub fn derive_u8(n1: u8, n2: u8, n3: u8) -> NatDerivTimes {
         Self::derive(Nat::new(n1), Nat::new(n2), Nat::new(n3))
     }
