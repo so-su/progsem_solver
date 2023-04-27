@@ -107,6 +107,7 @@ impl Display for NatDerivPlus {
     }
 }
 
+#[derive(Debug)]
 pub enum NatDerivTimes {
     TZero {
         n: Nat,
